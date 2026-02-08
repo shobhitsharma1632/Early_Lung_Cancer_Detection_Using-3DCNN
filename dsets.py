@@ -17,6 +17,8 @@ from util.disk import getCache
 from util.util import XyzTuple, xyz2irc
 from util.logconf import logging
 
+from random import shuffle
+
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
 # log.setLevel(logging.INFO)
@@ -161,7 +163,7 @@ class LunaDataset(Dataset):
             del self.candidateInfo_list[::val_stride]
             assert self.candidateInfo_list
         
-        log.info(f"{self!r}: {len(self.candidateInfo_list)} {"validation" if isValSet_bool else "training"} samples")
+        log.info(f"{self!r}: {len(self.candidateInfo_list)} {'validation' if isValSet_bool else 'training'} samples")
 
     def __len__(self):
         return len(self.candidateInfo_list)

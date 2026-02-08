@@ -6,7 +6,7 @@ import time
 
 import numpy as np
 
-import logging
+from util.logconf import logging
 
 log = logging.getLogger(__name__)
 log.setLevel(logging.DEBUG)
@@ -29,7 +29,7 @@ def xyz2irc(coord_xyz, origin_xyz, vxSize_xyz, direction_a):
     coord_a = np.array(coord_xyz)
     cri_a = ((coord_a - origin_a) @ np.linalg.inv(direction_a)) / vxSize_a
     cri_a = np.round(cri_a)
-    return IrcTuple(*(cri_a[2]), int(cri_a[1]), int(cri_a[0]))
+    return IrcTuple(int(cri_a[2]), int(cri_a[1]), int(cri_a[0]))
 
 def importstr(module_str, from_=None):
     """
