@@ -2,7 +2,7 @@ import time
 import numpy as np
 import matplotlib.pyplot as plt
 from collections import defaultdict
-from dsets import LunaDataset
+from src.dsets import LunaDataset
 
 def main():
     print("Measuring the time to iterate through the LunaDataset instance")
